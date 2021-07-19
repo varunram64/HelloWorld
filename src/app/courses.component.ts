@@ -17,7 +17,7 @@ import { CoursesService } from './courses.service';
                 </div>
                 <br />
                 <br />
-                <input type="text" (keyup.enter)="onKeyUp()" />
+                <input #email type="text" (keyup.enter)="onKeyUp($event)" (keydown)="onKeyDown(email.value)" />
                 <br />
                 <br />
                 <div (click)="onDivClicked()">
@@ -47,7 +47,11 @@ export class CoursesComponent {
         console.log('Div was clicked');
     }
 
-    onKeyUp() {
-        console.log('Enter was clicked');
+    onKeyUp($event: Event) {
+        console.log('Enter was clicked', $event);
+    }
+
+    onKeyDown(email: string) {
+        console.log('Email is', email);
     }
 }

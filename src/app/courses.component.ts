@@ -15,7 +15,16 @@ import { CoursesService } from './courses.service';
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'grey'" [class.active]="isActive">Save</button>`
+                <br />
+                <br />
+                <input type="text" (keyup.enter)="onKeyUp()" />
+                <br />
+                <br />
+                <div (click)="onDivClicked()">
+                    <button (click)="onSave($event)" class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'grey'" [class.active]="isActive">
+                        Save
+                    </button>
+                </div>`
 })
 
 export class CoursesComponent {
@@ -23,9 +32,22 @@ export class CoursesComponent {
     // courses = ["Course1", "Course2", "Course3"];
     courses;
     // widthOfColumn = '40'; 
-    isActive = false;
+    isActive = true;
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
+    }
+
+    onSave($event: Event) {
+        $event.stopPropagation();
+        console.log('Button was clicked', $event);
+    }
+
+    onDivClicked() {
+        console.log('Div was clicked');
+    }
+
+    onKeyUp() {
+        console.log('Enter was clicked');
     }
 }

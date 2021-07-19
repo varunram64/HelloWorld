@@ -9,6 +9,14 @@ export class AuthorsService {
   constructor() { }
 
   getAuthors() {
-    return ["Author1", "Author2", "Author3"];
+    return [
+      {
+        title: "The complete Angular Course",
+        rating: 4.9032,
+        students: 10345,
+        price: 145.54,
+        releaseDate: new Date(2016, 3, 1)
+      }
+    ];
   }
 }

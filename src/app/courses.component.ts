@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { CoursesService } from './courses.service';
 
 @Component({
@@ -17,7 +18,10 @@ import { CoursesService } from './courses.service';
                 </div>
                 <br />
                 <br />
-                <input #email type="text" (keyup.enter)="onKeyUp($event)" (keydown)="onKeyDown(email.value)" />
+                <input type="text" (keyup.enter)="onKeyUp($event)" (keydown)="onKeyDown()" [value]="email" />
+                <br />
+                <br />
+                <input type="text" (keyup.enter)="onKeyUp($event)" [(ngModel)]="email" />
                 <br />
                 <br />
                 <div (click)="onDivClicked()">
@@ -33,6 +37,7 @@ export class CoursesComponent {
     courses;
     // widthOfColumn = '40'; 
     isActive = true;
+    email = "";
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
@@ -51,7 +56,7 @@ export class CoursesComponent {
         console.log('Enter was clicked', $event);
     }
 
-    onKeyDown(email: string) {
-        console.log('Email is', email);
+    onKeyDown() {
+        console.log('Email is', this.email);
     }
 }

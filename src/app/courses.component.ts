@@ -8,20 +8,22 @@ import { CoursesService } from './courses.service';
     template: `<h2>
                     {{ title }}
                 </h2>
-                <table>
-                    <tr>
-                        <td [width]="widthOfColumn" *ngFor="let course of courses">
+                <div>
+                    <div class="row">
+                        <div class="col-lg-3" *ngFor="let course of courses">
                             {{ course }}
-                        </td>
-                    </tr>
-                </table>`
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'grey'" [class.active]="isActive">Save</button>`
 })
 
 export class CoursesComponent {
     title = 'List of Courses';
     // courses = ["Course1", "Course2", "Course3"];
     courses;
-    widthOfColumn = '40'; 
+    // widthOfColumn = '40'; 
+    isActive = false;
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();

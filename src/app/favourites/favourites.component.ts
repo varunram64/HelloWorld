@@ -17,6 +17,6 @@ export class FavouritesComponent {
 
   onFavouriteClick() {
     this.isSelected = !this.isSelected;
-    this.change.emit();
+    this.change.emit({ isFavorite: this.isSelected });
   }
 }

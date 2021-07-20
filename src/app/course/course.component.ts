@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
+interface FavouriteChangedEventArgs {
+  isFavorite: boolean
+}
+
 @Component({
   selector: 'course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
+
 export class CourseComponent implements OnInit {
   imageURL = "";
   post = {
@@ -21,8 +26,8 @@ export class CourseComponent implements OnInit {
 
   }
 
-  onFavouriteChanged() {
-    console.log("Favourite changed");
+  onFavouriteChanged(eventArgs: FavouriteChangedEventArgs) {
+    console.log("Favourite changed", eventArgs.isFavorite);
   }
 
 }

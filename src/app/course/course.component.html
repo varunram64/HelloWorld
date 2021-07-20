@@ -8,7 +8,7 @@
 </div> -->
 <div class="row">
     <div class="col-12">
-        <favourites [isFavorite]="post.isFavorite" [title]="post.title"></favourites>
+        <favourites [isFavorite]="post.isFavorite" [title]="post.title" (change)="onFavouriteChanged()"></favourites>
     </div>
 </div>
 

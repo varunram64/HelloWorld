@@ -21,4 +21,8 @@ export class CourseComponent implements OnInit {
 
   }
 
+  onFavouriteChanged() {
+    console.log("Favourite changed");
+  }
+
 }

@@ -8,13 +8,13 @@ import { Component, Input } from '@angular/core';
                     //whenever we change name we have to change here as well
 })
 export class FavouritesComponent {
-  @Input() isFavorite = false;
+  @Input('isFavorite') isSelected = false;
   title = '';
 
   constructor() { 
   }
 
   onFavouriteClick() {
-    this.isFavorite = !this.isFavorite;
+    this.isSelected = !this.isSelected;
   }
 }

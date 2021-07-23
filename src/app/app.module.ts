@@ -11,6 +11,7 @@ import { CoursesService } from './courses.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { TitlesComponent } from './titles/titles.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TitlesComponent } from './titles/titles.component';
     AuthorsComponent,
     SummaryPipe,
     FavouritesComponent,
-    TitlesComponent
+    TitlesComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,

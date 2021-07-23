@@ -1,12 +1,13 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'favourites',
   templateUrl: './favourites.component.html',
+  encapsulation: ViewEncapsulation.Emulated,
   styleUrls: ['./favourites.component.css'], //We can use both file and parameters
   styles: [
   `
-    .bi {
+    .bi-star-fill {
       color: green;
     }
   ` 

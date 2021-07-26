@@ -1,32 +1,9 @@
-<h1>Angular</h1>
-<!-- Until Angular 4 -->
-<div *ngIf="courses.length > 0">
-    List of courses
-</div>
-<div *ngIf="courses.length == 0">
-    No courses yet
-</div>
-<!-- Latest Versions -->
-<div *ngIf="courses.length > 0; else noCourses">
-    List of courses
-</div>
-<ng-template #noCourses>
-    No courses yet
-</ng-template>
-<br />
-<!-- Another approach -->
-<div *ngIf="courses.length > 0; then coursesList else noCourses1"></div>
-<ng-template #coursesList>
-    List of courses
-</ng-template>
-<ng-template #noCourses1>
-    No courses yet
-</ng-template>
-<br />
-<!-- hidden property -->
-<div [hidden]="courses.length == 0">
-    List of courses
-</div>
-<div [hidden]="courses.length > 0">
-    No courses yet
+<ul class="nav nav-pills">
+    <li class="nav-link" [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map';">Map View</a></li>
+    <li class="nav-link" [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list';">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
 </div>

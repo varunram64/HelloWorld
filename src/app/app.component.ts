@@ -12,4 +12,6 @@ export class AppComponent {
     isLiked: true,
     likesCount: 11
   };
+
+  courses = [1, 2];
 }

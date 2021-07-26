@@ -1,5 +1,24 @@
 <h1>Angular</h1>
-<bootstrap-like [likesCount]="tweet.likesCount" 
-                [isActive]="tweet.isLiked">
-    <ng-container class="likecontent"></ng-container>
-</bootstrap-like>
+<!-- Until Angular 4 -->
+<div *ngIf="courses.length > 0">
+    List of courses
+</div>
+<div *ngIf="courses.length == 0">
+    No courses yet
+</div>
+<!-- Latest Versions -->
+<div *ngIf="courses.length > 0; else noCourses">
+    List of courses
+</div>
+<ng-template #noCourses>
+    No courses yet
+</ng-template>
+<br />
+<!-- Another approach -->
+<div *ngIf="courses.length > 0; then coursesList else noCourses1"></div>
+<ng-template #coursesList>
+    List of courses
+</ng-template>
+<ng-template #noCourses1>
+    No courses yet
+</ng-template>

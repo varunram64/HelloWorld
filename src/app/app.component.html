@@ -10,11 +10,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of courses; trackBy: trackCourse;">
+        <tr *ngFor="let course of courses; even as isEven; trackBy: trackCourse;">
             <td scope="row">{{ course.id }}</td>
             <td>{{ course.name }}</td>
             <td>
-                <button (click)="onChange(course)">Update</button>
+                <button class="btn btn-primary" [ngClass]="{
+                    'disabled': isEven,
+                    'active': !isEven
+                }" (click)="onChange(course)">Update</button>
                 <button (click)="onDelete(course)">Remove</button>
             </td>
         </tr>

@@ -13,7 +13,7 @@ export class AppComponent {
     likesCount: 11
   };
 
-  courses: any;
+  courses: any = null;
 
   viewMode = 'map';
 

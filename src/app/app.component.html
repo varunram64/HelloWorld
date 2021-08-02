@@ -1,4 +1,7 @@
-<button (click)="onAdd()">Add</button>
+<button (click)="onAdd()" [ngStyle]="{
+    'backgroundColor': 'blue',
+    'color': courses && courses.length ? 'white' : 'red'
+}">Add</button>
 <button (click)="loadCoures()">Load Courses</button>
 
 <table class="table table-striped">

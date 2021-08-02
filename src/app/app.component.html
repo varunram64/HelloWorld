@@ -1,4 +1,5 @@
 <button (click)="onAdd()">Add</button>
+<button (click)="loadCoures()">Load Courses</button>
 
 <table class="table table-striped">
     <thead>
@@ -9,8 +10,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of courses; even as isEven; index as i">
-            <td scope="row">{{ (i + 1) }}</td>
+        <tr *ngFor="let course of courses; trackBy: trackCourse;">
+            <td scope="row">{{ course.id }}</td>
             <td>{{ course.name }}</td>
             <td>
                 <button (click)="onChange(course)">Update</button>

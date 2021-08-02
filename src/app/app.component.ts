@@ -13,15 +13,7 @@ export class AppComponent {
     likesCount: 11
   };
 
-  courses = [
-  {
-    id: 1,
-    name: 'Course1'
-  }, 
-  {
-    id: 2,
-    name: 'Course2'
-  }];
+  courses: any;
 
   viewMode = 'map';
 
@@ -40,5 +32,21 @@ export class AppComponent {
   onChange(course: any) {
     let index = this.courses.indexOf(course);
     this.courses[index].name = 'Updated';
+  }
+
+  loadCoures() {
+    this.courses = [
+      {
+        id: 1,
+        name: 'Course1'
+      }, 
+      {
+        id: 2,
+        name: 'Course2'
+      }];
+  }
+
+  trackCourse(index: any, course: any) {
+    return course ? course.id : undefined;
   }
 }

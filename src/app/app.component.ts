@@ -13,7 +13,13 @@ export class AppComponent {
     likesCount: 11
   };
 
-  courses = [1, 2];
+  courses = [
+  {
+    name: 'Course1'
+  }, 
+  {
+    name: 'Course2'
+  }];
 
   viewMode = 'map';
 }

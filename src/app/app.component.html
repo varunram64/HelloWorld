@@ -1,14 +1,23 @@
+<button (click)="onAdd()">Add</button>
+
 <table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th>Course</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let course of courses; even as isEven; index as i">
             <td scope="row">{{ (i + 1) }}</td>
             <td>{{ course.name }}</td>
+            <td>
+                <button (click)="onChange(course)">Update</button>
+                <button (click)="onDelete(course)">Remove</button>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<br />

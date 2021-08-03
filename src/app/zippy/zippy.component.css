@@ -1,0 +1,20 @@
+.zippy {
+    color: black;
+}
+
+    .zippy > .heading {
+        border: 1px solid salmon;
+        background-color: #fefefe;
+        font-weight: bold;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    .zippy > .body {
+        padding: 20px;
+    }
+
+    .zippy > .expanded {
+        background-color: yellow;
+    }
+

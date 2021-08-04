@@ -1,0 +1,62 @@
+<form #f="ngForm" (ngSubmit)="onCourseSubmit(f)">
+    <div 
+        class="form-group p-1">
+        <label for="courseName">
+            Course Name *
+        </label>
+        <input 
+            ngModel
+            required
+            type="text" 
+            name="courseName" 
+            id="courseName" 
+            #courseName="ngModel"
+            class="form-control">
+        <div *ngIf="courseName.touched && courseName.errors" class="alert alert-danger">
+            <div *ngIf="courseName.errors.required">
+                Course Name is mandatory.
+            </div>
+        </div>
+    </div>
+    <div  
+        class="form-group p-1">
+        <label for="category">Category *</label>
+        <select 
+            ngModel
+            required
+            name="category" 
+            id="category" 
+            #category="ngModel"
+            class="form-control">
+            <option value=""></option>
+            <option *ngFor="let eachCat of categories" [value]="eachCat.id">
+                {{ eachCat.name }}
+            </option>
+        </select>
+        <div *ngIf="category.touched && category.errors" class="alert alert-danger">
+            <div *ngIf="category.errors.required">
+                Category is mandatory.
+            </div>
+        </div>
+    </div>
+    <div class="checkbox p-1">
+        <label for="moneyBackGuarantee">
+            30-day money-back guarantee
+        </label>
+        <input 
+                ngModel
+                id="moneyBackGuarantee"
+                name="moneyBackGuarantee"
+                type="checkbox"
+                class="float-start mt-2 me-2">
+    </div>
+    <p>
+        {{ f.value | json }}
+    </p>
+    <button 
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!f.valid">
+        Create
+    </button>
+</form>

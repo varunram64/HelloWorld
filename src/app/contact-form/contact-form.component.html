@@ -1,8 +1,20 @@
 <form>
     <div class="form-group">
         <label for="firstname">First Name</label>
-        <input required minlength="4" maxlength="12" pattern="banana" ngModel name="firstname" #firstname="ngModel" id="firstname" type="text" class="form-control">
-        <div *ngIf="firstname.touched && firstname.errors" class="alert alert-danger">
+        <input 
+        required 
+        minlength="4" 
+        maxlength="12" 
+        pattern="banana" 
+        ngModel 
+        name="firstname" 
+        #firstname="ngModel" 
+        id="firstname" 
+        type="text" 
+        class="form-control">
+        <div 
+        *ngIf="firstname.touched && firstname.errors" 
+        class="alert alert-danger">
             <div *ngIf="firstname.errors.required">
                 First Name is mandatory
             </div>
@@ -19,7 +31,8 @@
     </div>
     <div class="form-group">
         <label for="comment">Comment</label>
-        <textarea ngModel name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+        <textarea ngModel name="comment" id="comment" cols="30" rows="10" class="form-control">
+        </textarea>
     </div>
     <button class="btn btn-primary" type="submit">Save</button>
 </form>

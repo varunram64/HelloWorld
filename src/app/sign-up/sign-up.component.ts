@@ -10,18 +10,24 @@ import { UseridValidators } from './userid.validators';
 
 export class SignUpComponent {
 
-  loginform = new FormGroup({ 
+  signupform = new FormGroup({ 
     userid: new FormControl('', 
     Validators.required,
     UseridValidators.shouldBeUnique),
     password: new FormControl('', Validators.required)
   });
 
+  signUp(value: any) {
+    this.signupform.setErrors({
+      invalidUser: true
+    });
+  }
+
   get userid() {
-    return this.loginform.get('userid');
+    return this.signupform.get('userid');
   };
 
   get password() {
-    return this.loginform.get('password');
+    return this.signupform.get('password');
   };
 }

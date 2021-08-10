@@ -11,11 +11,9 @@ import { UseridValidators } from './userid.validators';
 export class SignUpComponent {
 
   loginform = new FormGroup({ 
-    userid: new FormControl('', [
-      Validators.required, 
-      Validators.minLength(3),
-      UseridValidators.cannotContainSpace
-    ]),
+    userid: new FormControl('', 
+    Validators.required,
+    UseridValidators.shouldBeUnique),
     password: new FormControl('', Validators.required)
   });
 

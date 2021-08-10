@@ -23,7 +23,7 @@ export class UseridValidators {
                         shouldBeUnique: true
                     });
                 else resolve(null);
-            }, 200);
+            }, 2000);
         });
     }
 }

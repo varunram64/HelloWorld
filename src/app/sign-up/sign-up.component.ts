@@ -11,10 +11,12 @@ import { UseridValidators } from './userid.validators';
 export class SignUpComponent {
 
   signupform = new FormGroup({ 
-    userid: new FormControl('', 
-    Validators.required,
-    UseridValidators.shouldBeUnique),
-    password: new FormControl('', Validators.required)
+    account: new FormGroup({
+      userid: new FormControl('', 
+      Validators.required,
+      UseridValidators.shouldBeUnique),
+      password: new FormControl('', Validators.required)
+    })
   });
 
   signUp(value: any) {
@@ -24,10 +26,10 @@ export class SignUpComponent {
   }
 
   get userid() {
-    return this.signupform.get('userid');
+    return this.signupform.get('account.userid');
   };
 
   get password() {
-    return this.signupform.get('password');
+    return this.signupform.get('account.password');
   };
 }
